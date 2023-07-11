@@ -22,7 +22,7 @@ const MyChats = ({ fetchAgain }) => {
         },
       };
 
-      const { data } = await axios.get("http://localhost:5000/api/chat", config);
+      const { data } = await axios.get("https://chat-app-2100016081-api.vercel.app/api/chat", config);
       console.log(data);
       setChats(data);
     } catch (error) {

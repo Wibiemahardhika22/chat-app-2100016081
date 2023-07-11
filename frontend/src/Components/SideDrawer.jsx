@@ -50,7 +50,7 @@ const SideDrawer = () => {
                 },
             };
 
-            const { data } = await axios.get(`http://localhost:5000/api/user?search=${search}`, config)
+            const { data } = await axios.get(`https://chat-app-2100016081-api.vercel.app/api/user?search=${search}`, config)
 
             setLoading(false)
             setSearchResult(data);
@@ -77,7 +77,7 @@ const SideDrawer = () => {
                 },
             };
 
-            const { data } = await axios.post("http://localhost:5000/api/chat", { userId }, config)
+            const { data } = await axios.post("https://chat-app-2100016081-api.vercel.app/api/chat", { userId }, config)
 
             if (!chats.find((chat) => chat._id === data._id)) {
                 setChats([data, ...chats])
@@ -108,7 +108,7 @@ const SideDrawer = () => {
                 },
             };
 
-            const { data } = await axios.delete(`http://localhost:5000/api/user/${user._id}`, config)
+            const { data } = await axios.delete(`https://chat-app-2100016081-api.vercel.app/api/user/${user._id}`, config)
 
             toast({
                 title: 'User berhasil dihapus',

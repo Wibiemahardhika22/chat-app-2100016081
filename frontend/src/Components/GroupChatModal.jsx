@@ -32,7 +32,7 @@ const GroupChatModal = ({ children }) => {
                 },
             };
 
-            const { data } = await axios.get(`http://localhost:5000/api/user?search=${search}`, config);
+            const { data } = await axios.get(`https://chat-app-2100016081-api.vercel.app/api/user?search=${search}`, config);
             // console.log(data);
             setLoading(false)
             setSearchResult(data);
@@ -66,7 +66,7 @@ const GroupChatModal = ({ children }) => {
                 },
             };
 
-            const { data } = await axios.post("http://localhost:5000/api/chat/group", {
+            const { data } = await axios.post("https://chat-app-2100016081-api.vercel.app/api/chat/group", {
                 name: groupChatName,
                 users: JSON.stringify(selectedUsers.map((user) => user._id))
             }, config);

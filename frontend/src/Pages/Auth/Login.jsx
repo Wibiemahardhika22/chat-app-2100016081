@@ -38,7 +38,7 @@ function Login() {
             };
 
             const { data } = await axios.post(
-                "http://localhost:5000/api/user/login",
+                "https://chat-app-2100016081-api.vercel.app/api/user/login",
                 { email, password },
                 config
             );

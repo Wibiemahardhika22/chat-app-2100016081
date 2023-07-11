@@ -96,7 +96,7 @@ function SignUp() {
             };
 
             const { data } = await axios.post(
-                "http://localhost:5000/api/user/signup",
+                "https://chat-app-2100016081-api.vercel.app/api/user/signup",
                 { name, email, password, pic },
                 config
             );
