@@ -11,7 +11,7 @@ import ProfileModal from './ProfileModal'
 import UpdateGroupChatModal from './UpdateGroupChatModal'
 import ScrollableChat from './ScrollableChat'
 
-const ENDPOINT = 'http://localhost:5000';
+const ENDPOINT = 'https://chat-app-2100016081-api.vercel.app';
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
