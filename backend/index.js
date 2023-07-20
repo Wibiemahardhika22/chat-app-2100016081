@@ -12,7 +12,7 @@ dotenv.config();
 connectDB();
 const app = express();
 app.use(cors({
-    origin: 'https://chat-app-2100016081.vercel.app',
+    origin: '*',
 }));
 app.use(express.json());
 
