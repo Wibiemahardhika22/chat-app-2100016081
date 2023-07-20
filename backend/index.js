@@ -11,7 +11,9 @@ const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
 dotenv.config();
 connectDB();
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://chat-app-2100016081.vercel.app',
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => {
