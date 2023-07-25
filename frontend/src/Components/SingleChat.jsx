@@ -57,7 +57,11 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     }
 
     useEffect(() => {
-        socket = io(ENDPOINT);
+        socket = io(ENDPOINT, {
+            origin: '*',
+            transports: ['websocket'],
+            withCredentials: true
+        });
         socket.emit('setup', user);
         socket.on('connected', () => setSocketConnected(true))
         socket.on('typing', () => setIsTyping(true))

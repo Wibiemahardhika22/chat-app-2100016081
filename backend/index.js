@@ -15,7 +15,12 @@ app.use(cors({
     origin: '*',
 }));
 app.use(express.json());
-
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+})
 app.get('/', (req, res) => {
     res.send('API is running...');
 });
@@ -35,7 +40,10 @@ const server = app.listen(5000, () => console.log(`Server running on port ${PORT
 const io = require('socket.io')(server, {
     pingTimeout: 60000,
     cors: {
-        origin: '*',
+        origin: "https://percobaan-cors-chatapp.vercel.app",
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type'],
+        credentials: true,
     }
 });
 
