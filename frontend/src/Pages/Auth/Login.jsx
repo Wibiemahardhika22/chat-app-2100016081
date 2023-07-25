@@ -56,13 +56,17 @@ function Login() {
             setLoading(false);
             navigate('/')
         } catch (error) {
-            toast({
-                title: error.response.data.message,
-                status: 'warning',
-                duration: 2000,
-                position: 'top-right',
-                isClosable: true,
-            })
+            if (error.response && error.response.data && error.response.data.message) {
+                toast({
+                    title: error.response.data.message,
+                    status: 'warning',
+                    duration: 2000,
+                    position: 'top-right',
+                    isClosable: true,
+                });
+            } else {
+                console.error('Error occurred:', error);
+            }
             setLoading(false);
         }
     }
