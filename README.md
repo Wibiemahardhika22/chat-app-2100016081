@@ -31,7 +31,9 @@ Berikut adalah langkah-langkah untuk menginstal dan menjalankan aplikasi Chat Ap
 ```bash
 git clone https://github.com/Wibiemahardhika22/chat-app-2100016081.git
 ```
-
+```bash
+cd chat-app-2100016081
+```
 #### 2. Instal Dependensi
 Backend
 ```bash
